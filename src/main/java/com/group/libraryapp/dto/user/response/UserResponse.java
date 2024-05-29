@@ -12,7 +12,11 @@ public class UserResponse {
         this.name = name;
         this.age = age;
     }
-
+    public  UserResponse(User user){ //25강 jPA 쉽게할려고 만들므
+        this.id =user.getID();
+        this.name= user.getName();
+        this.age = user.getAge();
+    }
     //    public UserResponse(long id, String name, Integer age) {
 //        this.id = id;
 //        this.name = name;
