@@ -49,12 +49,8 @@ public class UserServiceV2 {
 
     @Transactional
     public void deleteUser(String name){
-        //SELECT * FROM user WHRER name =?
-        User user =userRepository.findByName(name);
-
-        if(user ==null){
-            throw new IllegalArgumentException();
-        }
+//        //SELECT * FROM user WHRER name =?
+        User user =userRepository.findByName(name).orElseThrow();
 
         userRepository.delete(user);
     }
